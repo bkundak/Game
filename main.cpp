@@ -34,3 +34,4 @@ int main(){
     hero.attack(monster);      //hero atacks to monster
 return(0);
 }
+/*deneme*/
