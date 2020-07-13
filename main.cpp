@@ -26,7 +26,7 @@ int main()
     monster.setAttack(); //set monster's atack point default =1  you can cahange if you send a value
     hero.setAttack();    //default 2
 
-    //---------------------Game starts :D----------------------------------------------
+    //-------------------------------------------------------------------
     ninja.attack(hero);   //ninja atacks to hero
     hero.attack(ninja);   //hero atacks to ninja
     monster.attack(hero); //monster atacks to hero
