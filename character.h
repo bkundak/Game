@@ -2,7 +2,7 @@
 class Character
 {
 
-protected:  
+protected:
   int health;
   int armor;
   int attack_point;
