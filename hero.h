@@ -30,4 +30,3 @@ public:
         std::cout << "\nNew health of " << EnemyObj.EnemyType << " :" << EnemyObj.getHealth() << "\n"; //get new health
     }
 };
-/* deneme */
