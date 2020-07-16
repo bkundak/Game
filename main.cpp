@@ -10,6 +10,7 @@
 #include "character.h"
 #include "hero.h"
 #include "enemy.h"
+#include "select.h"
 
 int main()
 {
@@ -26,12 +27,7 @@ int main()
     monster.setAttack(); //set monster's atack point default =1  you can cahange if you send a value
     hero.setAttack();    //default 2
 
-    //-------------------------------------------------------------------
-    ninja.attack(hero);   //ninja atacks to hero
-    hero.attack(ninja);   //hero atacks to ninja
-    monster.attack(hero); //monster atacks to hero
-    hero.attack(monster); //again hero attack to monster
-    ninja.attack(hero);
-    hero.attack(monster); //hero atacks to monster
+    while (turn(&hero, &ninja, &monster));
+
     return (0);
 }

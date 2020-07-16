@@ -14,7 +14,7 @@ protected:
   virtual int getHealth() = 0;
   virtual int getArmor() = 0;
 
-  virtual void setArmot(){};
+  virtual void setArmor(){};
   virtual void setHealth(){};
   virtual void setAttack(){};
 };
