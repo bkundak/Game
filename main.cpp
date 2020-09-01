@@ -12,22 +12,45 @@
 #include "enemy.h"
 #include "select.h"
 
+bool turn(Hero &hero, Ninja &ninja, Monster &monster)
+{
+    int s;
+    char flag;
+
+    std::cout << "Who do you want to attack" << std::endl;
+    std::cout << "press 1 to attack the ninja " << std::endl;
+    std::cout << "For attack to monster press 2" << std::endl;
+
+    std::cin >> s;
+    if (s = 1)
+    {
+        Attack(hero, ninja); //hero atacks to ninja
+        Attack(ninja, hero); //ninja atacks to hero
+    }
+    else if (s = 2)
+    {
+        Attack(hero, monster); //again hero attack to monster
+        Attack(monster, hero); //monster atacks to hero
+    }
+
+    std::cout << "Are you done? [y/n]" << std::endl;
+    std::cin >> flag;
+
+    return (flag != 'y');
+}
+
 int main()
 {
-    Hero hero;
-    Ninja ninja;
-    Monster monster;
+    std::cout << "Enter the name of your character: ";
+    std::string name;
+    std::cin >> name;
+    std::cout << std::endl;
+    Hero hero(name, 100, 1, 2);
+    Ninja ninja(100, 1, 2);
+    Monster monster(100, 1, 1);
 
-    hero.setHealth(100); //set all characters health %100
-    ninja.setHealth(100);
-    monster.setHealth(100);
-
-    //Set all character's damagepoint
-    ninja.setAttack();   //set ninnja's atack point default=2
-    monster.setAttack(); //set monster's atack point default =1  you can cahange if you send a value
-    hero.setAttack();    //default 2
-
-    while (turn(&hero, &ninja, &monster));
+    while (turn(hero, ninja, monster))
+        ;
 
     return (0);
 }
