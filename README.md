@@ -1,7 +1,4 @@
-# Game
- 
-
- ## In development
+## In development
 
  ### To Do
 
