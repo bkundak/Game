@@ -10,8 +10,4 @@
 8. Colored console text
 
 String formatting
-
-Bonus quest: learn about State machine
-
- 
-
+learn about State machine
