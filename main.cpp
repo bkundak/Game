@@ -1,10 +1,3 @@
-//To Do
-/*
-        -what happens if health=0
-        -Characters's special functions ?
-        -Set Armors (now characters have infinite Armor)
-        -create Game loop
-    */
 #include <iostream>
 #include <string>
 #include "character.h"
@@ -17,9 +10,9 @@ bool turn(Hero &hero, Ninja &ninja, Monster &monster)
     int s;
     char flag;
 
-    std::cout << "Who do you want to attack" << std::endl;
-    std::cout << "press 1 to attack the ninja " << std::endl;
-    std::cout << "For attack to monster press 2" << std::endl;
+    std::cout << "Who do you want to attack\n";
+    std::cout << "Press 1 to attack the ninja\n";
+    std::cout << "Press 2 to attack the monster\n";
 
     std::cin >> s;
     if (s == 1)
@@ -33,7 +26,7 @@ bool turn(Hero &hero, Ninja &ninja, Monster &monster)
         Attack(monster, hero); //monster atacks to hero
     }
 
-    std::cout << "Are you done? [y/n]" << std::endl;
+    std::cout << "Are you done? [y/n]\n";
     std::cin >> flag;
 
     return (flag != 'y');
@@ -44,17 +37,19 @@ int main()
     std::cout << "Enter the name of your character: ";
     std::string name;
     std::cin >> name;
-    std::cout << std::endl;
-    Hero hero(name, 1, 1, 2);
+
+    Hero hero(name, 1, 0, 2);
     Ninja ninja(100, 1, 2);
     Monster monster(100, 1, 1);
+    
     int flag = 0;
+    
     do
     {
-        std::cout << "What do you want to do?" << std::endl;
-        std::cout << "[1] Let's kill some monsters" << std::endl;
-        std::cout << "[2] Shop" << std::endl;
-        std::cout << "[3] Exit" << std::endl;
+        std::cout << "What do you want to do?\n";
+        std::cout << "[1] Let's kill some monsters\n";
+        std::cout << "[2] Shop\n"; 
+        std::cout << "[3] Exit\n";
 
         std::cin >> flag;
 

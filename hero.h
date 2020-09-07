@@ -17,10 +17,10 @@ public:
 
         int flag=0;
 
-        std::cout << "What fo you want to buy?" << std::endl;
-        std::cout << "For restore healt press 1 " << std::endl;
-        std::cout << "For upgrade attack point perss 2 " << std::endl;
-        std::cout << "For upgrade attack point perss 3" << std::endl;
+        std::cout << "What do you want to do?\n";
+        std::cout << "[1] Restore health\n";
+        std::cout << "[2] Upgrade attack point\n";
+        std::cout << "[3] Upgrade armor\n";
 
         std::cin >> flag;
 
