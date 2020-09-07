@@ -3,6 +3,7 @@
  ### To Do
 
  - [ ] Fights should last until one is dead or you retreat
+ - [ ] Random attacks 
  - [X] Hunt/Shop/Exit should be main options
  ### - [ ] Shop as a class
     - [X] Healing
