@@ -24,17 +24,20 @@ public:
 
         std::cin >> flag;
 
-        if (flag == 1)
+        switch (flag)
         {
-            player.health = 100;
-        }
-        if (flag == 2)
-        {
+        case 1:
+            player.health=100;
+            break;
+        case 2:
             player.attack_point++;
-        }
-        if (flag == 3)
-        {
+            break;
+        case 3:
             player.armor++;
+            break;
+        default:
+            std::cout << "Incorrect input!!";
+            break;
         }
     }
 };
