@@ -12,7 +12,7 @@ public:
     std::string getName() { return name; }
     std::string getType() override { return "Hero"; }
 
-    void Shop(Hero player)
+    void Shop(Hero &player)
     {
 
         int flag=0;
@@ -24,15 +24,15 @@ public:
 
         std::cin >> flag;
 
-        if (flag = 1)
+        if (flag == 1)
         {
             player.health = 100;
         }
-        if (flag = 2)
+        if (flag == 2)
         {
             player.attack_point++;
         }
-        if (flag = 3)
+        if (flag == 3)
         {
             player.armor++;
         }

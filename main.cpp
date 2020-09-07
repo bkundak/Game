@@ -22,12 +22,12 @@ bool turn(Hero &hero, Ninja &ninja, Monster &monster)
     std::cout << "For attack to monster press 2" << std::endl;
 
     std::cin >> s;
-    if (s = 1)
+    if (s == 1)
     {
         Attack(hero, ninja); //hero atacks to ninja
         Attack(ninja, hero); //ninja atacks to hero
     }
-    else if (s = 2)
+    else if (s == 2)
     {
         Attack(hero, monster); //again hero attack to monster
         Attack(monster, hero); //monster atacks to hero
@@ -58,18 +58,16 @@ int main()
 
         std::cin >> flag;
 
-        if (flag = 1)
+        if (flag == 1)
         {
             while (turn(hero, ninja, monster))
                 ;
         }
 
-        if (flag = 2)
+        if (flag == 2)
         {
             hero.Shop(hero);
         }
-        if (flag = 3 )
-         break;
     } while (flag != 3);
 
     return (0);
