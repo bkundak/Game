@@ -6,7 +6,6 @@ void Attack(Character &player, Character &enemy)
     int hero_health = player.getHealth();
 
     printf("%s attacks you with %d\n", enemy.getType().c_str(), enemy.getAttack());
-    //std::cout << "\nNinja attack atack to you with " << attack_point << " attack point" << std::endl;
     std::cout << "Your old health:" << player.getHealth();
 
     player.takeDamage(enemy.getAttack());

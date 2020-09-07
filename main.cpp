@@ -17,13 +17,13 @@ bool turn(Hero &hero, Ninja &ninja, Monster &monster)
     std::cin >> s;
     if (s == 1)
     {
-        Attack(hero, ninja); //hero atacks to ninja
-        Attack(ninja, hero); //ninja atacks to hero
+        Attack(hero, ninja);
+        Attack(ninja, hero);
     }
     else if (s == 2)
     {
-        Attack(hero, monster); //again hero attack to monster
-        Attack(monster, hero); //monster atacks to hero
+        Attack(hero, monster);
+        Attack(monster, hero);
     }
 
     std::cout << "Are you done? [y/n]\n";
@@ -41,14 +41,14 @@ int main()
     Hero hero(name, 1, 0, 2);
     Ninja ninja(100, 1, 2);
     Monster monster(100, 1, 1);
-    
+
     int flag = 0;
-    
+
     do
     {
         std::cout << "What do you want to do?\n";
         std::cout << "[1] Let's kill some monsters\n";
-        std::cout << "[2] Shop\n"; 
+        std::cout << "[2] Shop\n";
         std::cout << "[3] Exit\n";
 
         std::cin >> flag;
@@ -59,7 +59,7 @@ int main()
                 ;
         }
 
-        if (flag == 2)
+        else if (flag == 2)
         {
             hero.Shop(hero);
         }

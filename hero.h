@@ -12,22 +12,29 @@ public:
     std::string getName() { return name; }
     std::string getType() override { return "Hero"; }
 
+    int PromptInt(int min, int max)
+    {
+        int s;
+        do
+        {
+            std::cout << "\nPlease enter a valid number: ";
+            std::cin >> s;
+        } while ( s < min || s > max);
+        return s;
+    }
+
     void Shop(Hero &player)
     {
-
-        int flag=0;
-
+      
         std::cout << "What do you want to do?\n";
         std::cout << "[1] Restore health\n";
         std::cout << "[2] Upgrade attack point\n";
         std::cout << "[3] Upgrade armor\n";
 
-        std::cin >> flag;
-
-        switch (flag)
+        switch (PromptInt(1,3))
         {
         case 1:
-            player.health=100;
+            player.health = 100;
             break;
         case 2:
             player.attack_point++;
@@ -36,7 +43,7 @@ public:
             player.armor++;
             break;
         default:
-            std::cout << "Incorrect input!!";
+            std::cout << "\nIncorrect input!!";
             break;
         }
     }
