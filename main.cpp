@@ -45,12 +45,32 @@ int main()
     std::string name;
     std::cin >> name;
     std::cout << std::endl;
-    Hero hero(name, 100, 1, 2);
+    Hero hero(name, 1, 1, 2);
     Ninja ninja(100, 1, 2);
     Monster monster(100, 1, 1);
+    int flag = 0;
+    do
+    {
+        std::cout << "What do you want to do?" << std::endl;
+        std::cout << "[1] Let's kill some monsters" << std::endl;
+        std::cout << "[2] Shop" << std::endl;
+        std::cout << "[3] Exit" << std::endl;
 
-    while (turn(hero, ninja, monster))
-        ;
+        std::cin >> flag;
+
+        if (flag = 1)
+        {
+            while (turn(hero, ninja, monster))
+                ;
+        }
+
+        if (flag = 2)
+        {
+            hero.Shop(hero);
+        }
+        if (flag = 3 )
+         break;
+    } while (flag != 3);
 
     return (0);
 }
