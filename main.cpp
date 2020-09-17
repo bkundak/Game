@@ -4,6 +4,7 @@
 #include "hero.h"
 #include "enemy.h"
 #include "input.h"
+#include "shop.h"
 
 bool turn(Hero &hero, Ninja &ninja, Monster &monster)
 {
@@ -62,7 +63,7 @@ int main()
 
         else if (flag == 2)
         {
-            hero.Shop(hero);
+            Shop(&hero);
         }
     } while (flag != 3);
 

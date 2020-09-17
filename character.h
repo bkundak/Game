@@ -23,9 +23,6 @@ public:
 
     return false;
   }
-  // virtual void setArmor(int value) = 0;
-  // virtual void setHealth(int value) = 0;
-  // virtual void setAttack(int value)= 0;
 
 protected:
   int health;
