@@ -1,5 +1,6 @@
 #include <iostream>
 #include "character.h"
+#include "input.h"
 
 class Hero : public Character
 {
@@ -12,18 +13,8 @@ public:
     std::string getName() { return name; }
     std::string getType() override { return "Hero"; }
 
-    int PromptInt(int min, int max)
-    {
-        int s;
-        do
-        {
-            std::cout << "\nPlease enter a valid number: ";
-            std::cin >> s;
-        } while ( s < min || s > max);
-        return s;
-    }
 
-    void Shop(Hero &player)
+void Shop(Hero &player)
     {
       
         std::cout << "What do you want to do?\n";
@@ -47,4 +38,5 @@ public:
             break;
         }
     }
+    
 };

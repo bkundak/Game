@@ -3,27 +3,29 @@
 #include "character.h"
 #include "hero.h"
 #include "enemy.h"
-#include "select.h"
+#include "input.h"
 
 bool turn(Hero &hero, Ninja &ninja, Monster &monster)
 {
-    int s;
     char flag;
 
     std::cout << "Who do you want to attack\n";
     std::cout << "Press 1 to attack the ninja\n";
     std::cout << "Press 2 to attack the monster\n";
 
-    std::cin >> s;
-    if (s == 1)
+    switch (PromptInt(1, 2))
     {
+    case 1:
         Attack(hero, ninja);
         Attack(ninja, hero);
-    }
-    else if (s == 2)
-    {
+        break;
+    case 2:
         Attack(hero, monster);
         Attack(monster, hero);
+        break;
+    default:
+        std::cout << "\nIncorrect input!!";
+        break;
     }
 
     std::cout << "Are you done? [y/n]\n";
@@ -34,15 +36,14 @@ bool turn(Hero &hero, Ninja &ninja, Monster &monster)
 
 int main()
 {
-    std::cout << "Enter the name of your character: ";
     std::string name;
-    std::cin >> name;
+    int flag;
+    std::cout << "Enter the name of your character: ";
+    InputStr(&name);
 
     Hero hero(name, 1, 0, 2);
     Ninja ninja(100, 1, 2);
     Monster monster(100, 1, 1);
-
-    int flag = 0;
 
     do
     {
@@ -51,7 +52,7 @@ int main()
         std::cout << "[2] Shop\n";
         std::cout << "[3] Exit\n";
 
-        std::cin >> flag;
+        flag = PromptInt(1, 3);
 
         if (flag == 1)
         {
